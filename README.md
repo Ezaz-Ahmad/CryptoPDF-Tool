@@ -7,6 +7,6 @@ Decrypt PDFs: Easily decrypt encrypted PDF files with the correct password.
 Cross-Drive Support: Scans and processes PDF files across all available drives.
 Customizable: Modify the code to suit specific encryption and decryption needs.
 ## Requirements
-Python 3.x
-PyPDF2 library
-Flask (for optional C2 communication)
+### Python 3.x
+### PyPDF2 library
+### Flask (for optional C2 communication)
